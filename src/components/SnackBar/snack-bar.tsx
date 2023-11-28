@@ -17,9 +17,7 @@ const SnackBar: React.FC<ISnackBar> = ({ isShown, closeSnack }) => {
         return (
           <Modal state={state} onClick={closeSnack}>
             <div
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
+              onClick={(e) => {}}
               className={`${classes["snack-bar-menu"]} snack-bar-menu-${state}`}
             >
               <img

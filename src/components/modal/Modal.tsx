@@ -5,7 +5,7 @@ import classes from "./Modal.module.scss";
 interface IModalProps {
   children: React.ReactNode;
   onClick: () => void;
-  state: string;
+  state?: string;
 }
 const Modal: React.FC<IModalProps> = ({ children, state, onClick }) => {
   return createPortal(
