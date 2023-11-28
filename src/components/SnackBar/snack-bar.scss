@@ -1,0 +1,35 @@
+.snack-bar-entering {
+  animation: backgroung-opacity 0.3s reverse;
+}
+
+.snack-bar-exiting {
+  animation: backgroung-opacity 0.3s;
+}
+
+@keyframes backgroung-opacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.snack-bar-menu-entering {
+  animation: snack-bar-menu-transfrom 0.3s;
+}
+
+.snack-bar-menu-exiting {
+  animation: snack-bar-menu-transfrom 0.3s reverse;
+}
+
+@keyframes snack-bar-menu-transfrom {
+  from {
+    transform: translateX(-330px);
+  }
+
+  to {
+    left: translateX(330px);
+  }
+}

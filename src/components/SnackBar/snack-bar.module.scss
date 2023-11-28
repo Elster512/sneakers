@@ -1,12 +1,14 @@
-.snack-body {
+.snack-bar-menu {
   background-color: var(--white);
+  position: absolute;
   height: 100%;
   width: 400px;
   color: var(--very-dark-blue);
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 40px;
+  padding: 30px;
+  z-index: 2;
 }
 .links-container {
   display: flex;
@@ -16,6 +18,11 @@
   list-style: none;
   li {
     font-size: 30px;
+    transition: transform ease-in-out 0.2s;
+    cursor: pointer;
+  }
+  li:hover {
+    transform: scale(1.05);
   }
 }
 .cross-icon {
