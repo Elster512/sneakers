@@ -1,0 +1,26 @@
+.snack-body {
+  background-color: var(--white);
+  height: 100%;
+  width: 400px;
+  color: var(--very-dark-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 40px;
+}
+.links-container {
+  display: flex;
+  height: 50%;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+  li {
+    font-size: 30px;
+  }
+}
+.cross-icon {
+  color: black;
+  width: 40px;
+  cursor: pointer;
+  height: 40px;
+}
