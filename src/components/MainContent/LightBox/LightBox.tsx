@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Modal from "../../UI/modal/Modal";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -10,6 +10,7 @@ import CrossIcon from "../../../assets/close-icon.svg";
 import classes from "./LigthBox.module.scss";
 import "./LightBox.scss";
 import { Transition } from "react-transition-group";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 interface ILightBoxProps {
   close: () => void;
@@ -22,7 +23,15 @@ const LightBox: React.FC<ILightBoxProps> = ({ close, imageList, isShown }) => {
   const handleClose = useCallback(() => {
     setThumbsSwiper(null);
     close();
-  }, []);
+  }, [close]);
+
+  const window = useWindowSize();
+  useEffect(() => {
+    if (isShown && window.width && window.width <= 764) {
+      setThumbsSwiper(null);
+      handleClose();
+    }
+  }, [handleClose, isShown, window.width]);
   return (
     <Transition in={isShown} timeout={300} unmountOnExit mountOnEnter>
       {(state) => (

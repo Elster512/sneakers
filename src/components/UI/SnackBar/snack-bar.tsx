@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./snack-bar.scss";
 import { Transition } from "react-transition-group";
 import CrossIcon from "../../../assets/close-icon.svg";
 import classes from "./snack-bar.module.scss";
 import Modal from "../modal/Modal";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 interface ISnackBar {
   closeSnack: () => void;
@@ -11,6 +12,12 @@ interface ISnackBar {
 }
 
 const SnackBar: React.FC<ISnackBar> = ({ isShown, closeSnack }) => {
+  const window = useWindowSize();
+  useEffect(() => {
+    if (isShown && window.width && window.width >= 1162) {
+      closeSnack();
+    }
+  }, [closeSnack, isShown, window.width]);
   return (
     <Transition in={isShown} timeout={300} mountOnEnter unmountOnExit>
       {(state) => {
