@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from "react";
-import MenuIcon from "../../assets/icon-menu.svg";
-import Logo from "../../assets/logo.svg";
-import CartIcon from "../../assets/icon-cart.svg";
-import Avatar from "../../assets/image-avatar.png";
+import MenuIcon from "../../../assets/icon-menu.svg";
+import Logo from "../../../assets/logo.svg";
+import CartIcon from "../../../assets/icon-cart.svg";
+import Avatar from "../../../assets/image-avatar.png";
 import classes from "./Header.module.scss";
 
 import SnackBar from "../SnackBar/snack-bar";
+
 const Header: React.FC = () => {
   const [snackVisible, setSnackVisible] = useState(false);
 

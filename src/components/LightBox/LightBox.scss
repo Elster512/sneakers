@@ -17,7 +17,11 @@
   width: 150px;
   cursor: pointer;
   height: 130px;
-
+  border-radius: 20px;
   object-fit: cover;
   display: block;
+}
+.swiper-slide-thumb-active img {
+  filter: sepia(20%);
+  border: 3px solid var(--orange);
 }

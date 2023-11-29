@@ -1,12 +1,12 @@
 import React, { useCallback, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Modal from "../modal/Modal";
+import Modal from "../UI/modal/Modal";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-
+import CrossIcon from "../../assets/close-icon.svg";
 import classes from "./LigthBox.module.scss";
 import "./LightBox.scss";
 import { Transition } from "react-transition-group";
@@ -31,6 +31,12 @@ const LightBox: React.FC<ILightBoxProps> = ({ close, imageList, isShown }) => {
             className={classes["window"]}
             onClick={(e) => e.stopPropagation()}
           >
+            <img
+              src={CrossIcon}
+              className={classes["cross-icon"]}
+              onClick={handleClose}
+            />
+
             <Swiper
               style={{
                 "--swiper-navigation-color": "#fff",

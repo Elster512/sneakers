@@ -1,12 +1,15 @@
 import "./App.scss";
-import Header from "./components/Header/Header";
+import Header from "./components/UI/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
+import ContextProvider from "./context/ContextProvider";
 
 function App() {
   return (
     <div>
-      <Header />
-      <MainContainer />
+      <ContextProvider>
+        <Header />
+        <MainContainer />
+      </ContextProvider>
     </div>
   );
 }
