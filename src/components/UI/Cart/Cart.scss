@@ -1,0 +1,15 @@
+.cart-entering {
+  animation: cart-opacity 0.3s reverse;
+}
+.cart-exiting {
+  animation: cart-opacity 0.3s;
+}
+
+@keyframes cart-opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

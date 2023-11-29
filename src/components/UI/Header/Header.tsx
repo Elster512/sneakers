@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               onClick={openCart}
             />
           </Badge>
-          {cartVisible && <Cart />}
+          <Cart isShown={cartVisible} />
         </div>
 
         <img src={Avatar} className={classes["avatar"]} />
