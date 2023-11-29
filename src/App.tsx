@@ -1,6 +1,6 @@
 import "./App.scss";
 import Header from "./components/UI/Header/Header";
-import MainContainer from "./components/MainContainer/MainContainer";
+import MainContainer from "./components/MainContent/MainContainer/MainContainer";
 import ContextProvider from "./context/ContextProvider";
 
 function App() {

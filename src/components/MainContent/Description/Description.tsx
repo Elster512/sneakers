@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import classes from "./Description.module.scss";
+import CartContext from "../../../context/CartContext";
 const Description: React.FC = () => {
+  const context = useContext(CartContext);
   return (
     <div className={classes["container"]}>
       <div className={classes["title"]}>
@@ -26,12 +28,15 @@ const Description: React.FC = () => {
         </div>
         <div className={classes["controls"]}>
           <div className={classes["counter"]}>
-            <RemoveIcon className={classes["icon"]} />
-            <div> 0</div>
+            <RemoveIcon
+              className={classes["icon"]}
+              onClick={context.removeItem}
+            />
+            <div> {context.totalAmount}</div>
 
-            <AddIcon className={classes["icon"]} />
+            <AddIcon className={classes["icon"]} onClick={context.addItem} />
           </div>
-          <button>
+          <button onClick={context.addItem}>
             <ShoppingCartIcon />
             Add to Cart
           </button>

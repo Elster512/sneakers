@@ -64,6 +64,16 @@
     transform: scale(1.1);
   }
 }
+.sub-container-cart {
+  display: flex;
+  position: relative;
+  align-items: center;
+  span > span {
+    background-color: var(--orange);
+    color: white;
+    font-weight: 700;
+  }
+}
 .avatar {
   height: 80px;
   &:hover {
@@ -89,5 +99,10 @@
   }
   .menu {
     display: block;
+  }
+}
+@media (max-width: 700px) {
+  .sub-container-cart {
+    position: unset;
   }
 }

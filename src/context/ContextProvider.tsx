@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import CartContext from "./CartContext";
 
 interface IContexProviderProps {
@@ -8,15 +8,16 @@ interface IContexProviderProps {
 const ContextProvider: React.FC<IContexProviderProps> = ({ children }) => {
   const [store, setStore] = useState(0);
 
-  const addItem = () => {
+  const addItem = useCallback(() => {
     setStore((prevState) => prevState + 1);
-  };
-  const removeItem = () => {
-    setStore((prevState) => prevState - 1);
-  };
-  const resetCart = () => {
+  }, []);
+
+  const removeItem = useCallback(() => {
+    setStore((prevState) => (prevState - 1 < 0 ? 0 : prevState - 1));
+  }, []);
+  const resetCart = useCallback(() => {
     setStore(0);
-  };
+  }, []);
   return (
     <CartContext.Provider
       value={{

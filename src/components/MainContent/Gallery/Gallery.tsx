@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import imageList from "../../consts/imageList";
+import imageList from "../../../consts/imageList";
 import classes from "./Gallery.module.scss";
 import LightBox from "../LightBox/LightBox";
 const Gallery: React.FC = () => {

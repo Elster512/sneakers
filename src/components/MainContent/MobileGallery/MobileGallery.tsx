@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import imageList from "../../consts/imageList";
+import imageList from "../../../consts/imageList";
 import classes from "./MobileGallery.module.scss";
 import "./MobileGallery.scss";
 const MobileGallery: React.FC = () => {
